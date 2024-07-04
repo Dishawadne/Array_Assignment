@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Feedback</h1>
+    
+    <textarea  id="text-box" rows="10" cols="50"></textarea><br><br>
+    <button onclick="addFeekback()" style="background-color:fuchsia;">Add Feedback</button>
+
+    <label for="Feedback">Enter Feedback:</label>
+    <input type="text" id="Feedback">
+
+    <script>
+        let FeedbackArray= [];
+
+        function addFeekback(){
+            let Feedback=document.getElementById("Feedback");
+
+            if(Feedback.value.trim() !== ""){
+                FeedbackArray.push(Feedback.value.trim());
+            }
+
+            Feedback.value= "";
+            let textBox=document.getElementById("text-box");
+            textBox.value=FeedbackArray.join("\n");
+        }
+    </script>
+</body>
+</html>
